@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary: #c5a059;
+  --color-primary-light: #e8d8a6;
+  --color-primary-dark: #b08d2b;
+  --color-bg-light: #fcfbfa;
+  --color-surface-light: #ffffff;
+  --color-border-light: #eaeaeb;
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #888888;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-text-main font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply flex items-center gap-4 px-8 py-3.5 transition-all duration-300 border-r-2 border-transparent;
+  }
+  .nav-link-active {
+    @apply text-primary border-primary bg-primary/5;
+  }
+  .nav-link-inactive {
+    @apply text-text-muted hover:text-text-main hover:bg-black/5;
+  }
+  .nav-text {
+    @apply text-[9px] uppercase tracking-[0.25em] font-medium;
+  }
+  .serif-heading {
+    @apply font-serif italic;
+  }
+}
